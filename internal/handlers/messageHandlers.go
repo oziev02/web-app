@@ -11,14 +11,12 @@ type Handler struct {
 }
 
 func (h *Handler) GetMessages(_ context.Context, _ messages.GetMessagesRequestObject) (messages.GetMessagesResponseObject, error) {
-	// Получение всех сообщений из сервиса
+
 	allMessages, err := h.Service.GetAllMessages()
 	if err != nil {
 		return nil, err
 	}
 
-	// Создаем переменную респон типа 200джейсонРеспонс
-	// Которую мы потом передадим в качестве ответа
 	response := messages.GetMessages200JSONResponse{}
 
 	// Заполняем слайс response всеми сообщениями из БД
@@ -30,7 +28,6 @@ func (h *Handler) GetMessages(_ context.Context, _ messages.GetMessagesRequestOb
 		response = append(response, message)
 	}
 
-	// САМОЕ ПРЕКРАСНОЕ. Возвращаем просто респонс и nil!
 	return response, nil
 }
 
@@ -38,9 +35,12 @@ func (h *Handler) PostMessages(_ context.Context, request messages.PostMessagesR
 	// Распаковываем тело запроса напрямую, без декодера!
 	messageRequest := request.Body
 	// Обращаемся к сервису и создаем сообщение
-	messageToCreate := messagesService.Message{Text: *messageRequest.Message}
-	createdMessage, err := h.Service.CreateMessage(messageToCreate)
+	messageToCreate := messagesService.Message{
+		Text: *messageRequest.Message,
+	}
 
+	// Передаем сообщение в сервис, для дальнейшого сохранения
+	createdMessage, err := h.Service.CreateMessage(messageToCreate)
 	if err != nil {
 		return nil, err
 	}
@@ -49,7 +49,6 @@ func (h *Handler) PostMessages(_ context.Context, request messages.PostMessagesR
 		Id:      &createdMessage.ID,
 		Message: &createdMessage.Text,
 	}
-	// Просто возвращаем респонс!
 	return response, nil
 }
 

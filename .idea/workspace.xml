@@ -11,14 +11,10 @@
       <change afterPath="$PROJECT_DIR$/../awesomeProject/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../awesomeProject/go.sum" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../awesomeProject/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/web/messages/api.gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openapi/.openapi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/openapi/openapi.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/handlers/api_handlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/handlers/messageHandlers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/database/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/database/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/handlers/messageHandlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/handlers/messageHandlers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
