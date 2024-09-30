@@ -11,11 +11,19 @@
       <change afterPath="$PROJECT_DIR$/../awesomeProject/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../awesomeProject/go.sum" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../awesomeProject/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/handlers/userHandlers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/userService/orm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/userService/repository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/userService/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/web/users/api.gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/20240930095055_users.down.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/20240930095055_users.up.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/database/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/database/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/handlers/messageHandlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/handlers/messageHandlers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/web/messages/api.gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/web/messages/api.gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openapi/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openapi/openapi.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

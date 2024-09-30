@@ -52,37 +52,33 @@ func (h *Handler) PostMessages(_ context.Context, request messages.PostMessagesR
 	return response, nil
 }
 
-func (h *Handler) PatchMessages(ctx context.Context, request messages.PatchMessagesRequestObject) (messages.PatchMessagesResponseObject, error) {
-	// Извлекаем тело запроса для обновления сообщения
+func (h *Handler) PatchMessagesId(_ context.Context, request messages.PatchMessagesIdRequestObject) (messages.PatchMessagesIdResponseObject, error) {
 	messageRequest := request.Body
-	// Обновляем сообщение через сервис
-	messageToUpdate := messagesService.Message{
-		Text: *messageRequest.Message,
-	}
 
-	updatedMessage, err := h.Service.UpdateMessageByID(int(*messageRequest.Id), messageToUpdate)
+	messageToUpdate := messagesService.Message{Text: *messageRequest.Message}
+
+	updatedMessage, err := h.Service.UpdateMessageByID(request.Id, messageToUpdate)
 	if err != nil {
 		return nil, err
 	}
-	// Формируем ответ
-	response := messages.PatchMessages200JSONResponse{
+
+	response := messages.PatchMessagesId200JSONResponse{
 		Id:      &updatedMessage.ID,
 		Message: &updatedMessage.Text,
 	}
+
 	return response, nil
 }
 
-func (h *Handler) DeleteMessages(ctx context.Context, request messages.DeleteMessagesRequestObject) (messages.DeleteMessagesResponseObject, error) {
-	// Извлекаем ID сообщения для удаления
-	id := request.Params.Id
+func (h *Handler) DeleteMessagesId(_ context.Context, request messages.DeleteMessagesIdRequestObject) (messages.DeleteMessagesIdResponseObject, error) {
+	id := request.Id
 
-	// Удаляем сообщение через сервис
 	err := h.Service.DeleteMessageByID(id)
 	if err != nil {
 		return nil, err
 	}
-	// Возвращаем успешный ответ без контента
-	return messages.DeleteMessages204Response{}, nil
+
+	return messages.DeleteMessagesId204Response{}, nil
 }
 
 func NewHandler(service *messagesService.MessageService) *Handler {

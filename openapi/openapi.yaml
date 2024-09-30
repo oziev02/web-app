@@ -35,10 +35,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Message'
+  /messages/{id}:
     patch:
       summary: Update a message
       tags:
         - messages
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         description: The message to update
         required: true
@@ -59,13 +66,85 @@ paths:
         - messages
       parameters:
         - name: id
-          in: query
+          in: path
           required: true
           schema:
             type: integer
       responses:
         '204':
           description: No content, message deleted successfully
+
+  /users:
+    get:
+      summary: Get all users
+      tags:
+        - users
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      summary: Create a new user
+      tags:
+        - users
+      requestBody:
+        description: The user to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: The created user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /users/{id}:
+    patch:
+      summary: Update a user
+      tags:
+        - users
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: The user to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: The updated user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      summary: Delete a user
+      tags:
+        - users
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: No content, user deleted successfully
+
 components:
   schemas:
     Message:
@@ -75,4 +154,14 @@ components:
           type: integer
           format: uint
         message:
+          type: string
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        email:
+          type: string
+        password:
           type: string
